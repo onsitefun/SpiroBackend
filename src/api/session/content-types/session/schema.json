@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sessions",
+  "info": {
+    "singularName": "session",
+    "pluralName": "sessions",
+    "displayName": "Session",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "audioFile": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "sessionName": {
+      "type": "string"
+    },
+    "sessionInstructor": {
+      "type": "string"
+    },
+    "sessionImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sessionDescription": {
+      "type": "text"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "isPremium": {
+      "type": "boolean"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "sessions"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "inversedBy": "sessions"
+    },
+    "journeys": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::journey.journey",
+      "inversedBy": "sessions"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "sessions"
+    }
+  }
+}
